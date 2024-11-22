@@ -1,0 +1,27 @@
+{
+  "name": "shine",
+  "version": "1.0.2",
+  "description": "Playwright Automation Framework with BDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test & npx ts-node index.ts",
+    "sample":"cucumber-js --env=dev"
+  },
+  "keywords": [
+    "PM",
+    "AF"
+  ],
+  "author": "Prashanth Marappa",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.7.0",
+    "@playwright/test": "^1.44.0",
+    "cucumber-html-reporter": "^7.1.1",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.44.0",
+    "ts-node": "^10.9.2",
+    "type": "module",
+    "typescript": "^5.4.5"
+  }
+
+}

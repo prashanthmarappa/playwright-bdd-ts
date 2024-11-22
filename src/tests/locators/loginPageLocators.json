@@ -1,0 +1,24 @@
+{
+    "loginlink": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[]",
+        "description": "login link",
+        "actionOptions": {
+            "timeout": 5000
+        }
+    },
+    "btngetstarted": {
+        "locatorOptions": {
+            "name": "Get started"
+        },
+        "locator": "link",
+        "description": "login link",
+        "actionOptions": {}
+    },
+    "txtSearch": {
+        "locatorOptions": {},
+        "locator": "xpath=//*[text()='Search']",
+        "description": "search field",
+        "actionOptions": {}
+    }
+}
