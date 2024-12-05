@@ -1,24 +1,65 @@
 {
-    "loginlink": {
+    "txt_personalpartyid": {
         "locatorOptions": {},
-        "locator": "xpath=//a[]",
-        "description": "login link",
-        "actionOptions": {
+        "locator": null,
+        "locatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": "Personal Party ID",
+        "description": "client verification page personal party id",
+        "actionOptions": {}
+    },
+    "txt_businesspartyid": {
+        "locatorOptions": {},
+        "locator": null,
+        "locatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": "Business Party ID",
+        "description": "client verification page business party id",
+        "actionOptions": {}
+    },
+    "txt letsGetStarted": {
+        "locatorOptions": {
+            "name": "Let's get started.."
+        },
+        "locator": null,
+        "locatorByRole": "heading",
+        "locatorByText": null,
+        "locatorByLabel": null,
+        "description": "Let's get started. page business party id",
+        "actionOptions": {}
+    },
+    "lbl_businesssegment": {
+        "locatorOptions": {},
+        "locator": null,
+        "LocatorByRole": null,
+        "locatorByText": "Business Segment *",
+        "locatorByLabel": null,
+        "description": "client verification page business party id",
+        "actionoptions": {}
+    },
+    "radio_btn_yes": {
+        "locatorOptions": {},
+        "locator": "xpath=//*[@id='']",
+        "LocatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": null,
+        "description": "client verification page business party id",
+        "actionoptions": {
             "timeout": 5000
         }
     },
-    "btngetstarted": {
-        "locatorOptions": {
-            "name": "Get started"
-        },
-        "locator": "link",
-        "description": "login link",
-        "actionOptions": {}
-    },
-    "txtSearch": {
+    "dropdown_ordervalue": {
         "locatorOptions": {},
-        "locator": "xpath=//*[text()='Search']",
-        "description": "search field",
-        "actionOptions": {}
+        "selectorOptions": {
+            "label": "order id"
+        },
+        "locator": "#industrydropdown",
+        "LocatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": null,
+        "description": "client verification page business party id",
+        "actionoptions": {
+            "timeout": 5000
+        }
     }
 }
