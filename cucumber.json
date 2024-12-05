@@ -1,6 +1,7 @@
 {
     "default": {
         "dryRun": false,
+        "parallel":1,
         "formatOptions": {
             "snippetInterface": "async-await"
         },
@@ -15,6 +16,11 @@
             "ts-node/register"
         ],
         "format": [
+            "progress-bar",
+            [
+                "rerun",
+                "@rerun.txt"
+            ],
             [
                 "json",
                 "reports/cucumber_report.json"
