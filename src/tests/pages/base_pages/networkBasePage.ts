@@ -75,7 +75,7 @@ export default class networkBasePage {
     async mockResponseChangeJson(url: string, mockPayload: string, change1: string, change2: string, change3: string) {
 
         let message, jsonVal, mockJsonVal;
-        const mockData = JSON.parse(fs.readFileSync(mockPayload, 'utf-8'));
+        const mockData = JSON.parse(fs.readFileSync(mockPayload, `utf-8`));
         await this.page.route(url, async route => {
             this.getFulFilledResponse(url);
             const response = await route.fetch();

@@ -16,6 +16,8 @@ let page:Page;
 loadEnv();
 
 export const firefoxBrowserOptions:LaunchOptions={
+    headless: process.env.Headless==='true',
+    args:["--start-maximized"],
 
 };
 
@@ -32,6 +34,7 @@ export const chromeBrowserOptions:LaunchOptions={
 };
 export const edgeBrowserOptions:LaunchOptions={
     channel:"msedge",
+    headless: process.env.Headless==='true',
     args:["--start-maximized"],
 
 };
@@ -59,7 +62,7 @@ export function loadEnv(){
 
 export function getBrowserCookieValue(array:Cookie[],cookieName:string){
     for(const cookie of array){
-       // const cookieName=cookie
+       const cookiename=cookie
         if(cookie.name.toUpperCase()===cookieName){
             return cookie.value;
         }
