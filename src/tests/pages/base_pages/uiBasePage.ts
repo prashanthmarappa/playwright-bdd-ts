@@ -64,7 +64,7 @@ export default class uiBasePage {
         this.loggerAttachment(`entered value '${data}' in ${this.getLocatorDescription(object)}`);
     }
 
-    async click_ifElementExist(locatorType: 'getByLocator' | 'getByLabel' | 'getByRole' | 'getByText', object: any, data: string) {
+    async click_ifElementExist(locatorType: 'getByLocator' | 'getByLabel' | 'getByRole' | 'getByText', object: any) {
         let isVisible: any;
         switch (locatorType) {
             case 'getByLocator':
@@ -105,7 +105,7 @@ export default class uiBasePage {
     }
 
 
-    async click(locatorType: 'getByLocator' | 'getByLabel' | 'getByRole' | 'getByText', object: any, data: string) {
+    async click(locatorType: 'getByLocator' | 'getByLabel' | 'getByRole' | 'getByText', object: any) {
 
         switch (locatorType) {
             case 'getByLocator':

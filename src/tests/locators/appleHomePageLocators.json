@@ -1,4 +1,15 @@
 {
+    "menu_button_store": {
+        "locatorOptions": {
+            "exact":true
+        },
+        "locator": null,
+        "locatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": "Store",
+        "description": "apple home page menu option store",
+        "actionOptions": {}
+    },
     "txt_personalpartyid": {
         "locatorOptions": {},
         "locator": null,
