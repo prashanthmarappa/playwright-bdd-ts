@@ -1,3 +1,13 @@
 package-lock.json
 /node_modules/
 /test-results/
+reports/*.html
+reports/*.json
+traces/
+reports/
+@rerun.txt
+dist/
+build
+docs/
+request.har
+*.logs
