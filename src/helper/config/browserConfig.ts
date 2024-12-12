@@ -1,6 +1,12 @@
-import{Browser,
+import{
+    Browser,
     BrowserContext,
     Page,
+    ChromiumBrowser,
+    FirefoxBrowser,
+    webkit,
+    WebKitBrowser,
+    chromium,
     LaunchOptions,
     BrowserContextOptions,
     Cookie,

@@ -36,7 +36,7 @@
     "@types/randomstring": "^1.1.8",
     "@types/string-format": "^2.0.0",
     "ajv": "^8.17.1",
-    "cucumber-html-reporter": "^6.0.0",
+    "cucumber-html-reporter": "^7.2.0",
     "dotenv": "^16.4.5",
     "fetch-to-curl": "0.5.2",
     "fs-extra": "10.1.0",
