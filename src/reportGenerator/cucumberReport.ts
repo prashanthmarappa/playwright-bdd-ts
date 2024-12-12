@@ -17,7 +17,7 @@ var options = {
         "Project Code": "MERCH-2076",
         "Test_Environment": "",
         "Browser": "",
-        "Platform": "Windows 11",
+        "Platform": "MAC OS",
         "Executed": "Local",
         "APP_URL": ""
     },
@@ -31,7 +31,7 @@ function generateHtml() {
     options.metadata.Execution_Date = DateUtil.dateGenerator("DD/MM/YYYY", 0, 0, 0);
     options.metadata.Browser = process.env.BROWSER as string;
     options.metadata.APP_URL = process.env.BASE_URL as string;
-    options.metadata.Test_Environment = process.env.APP_ENV as string;
+    options.metadata.Test_Environment = process.env.APP_ENV as string;;
     reporter.generate(options);
 }
 generateHtml();
