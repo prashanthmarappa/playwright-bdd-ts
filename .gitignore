@@ -5,7 +5,6 @@ reports/*.html
 reports/*.json
 traces/
 reports/
-
 dist/
 build
 docs/
