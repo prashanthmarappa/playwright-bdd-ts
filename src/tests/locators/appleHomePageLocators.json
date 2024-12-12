@@ -1,0 +1,76 @@
+{
+    "menu_button_store": {
+        "locatorOptions": {
+            "exact":true
+        },
+        "locator": null,
+        "locatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": "Store",
+        "description": "apple home page menu option store",
+        "actionOptions": {}
+    },
+    "txt_personalpartyid": {
+        "locatorOptions": {},
+        "locator": null,
+        "locatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": "Personal Party ID",
+        "description": "client verification page personal party id",
+        "actionOptions": {}
+    },
+    "txt_businesspartyid": {
+        "locatorOptions": {},
+        "locator": null,
+        "locatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": "Business Party ID",
+        "description": "client verification page business party id",
+        "actionOptions": {}
+    },
+    "txt letsGetStarted": {
+        "locatorOptions": {
+            "name": "Let's get started.."
+        },
+        "locator": null,
+        "locatorByRole": "heading",
+        "locatorByText": null,
+        "locatorByLabel": null,
+        "description": "Let's get started. page business party id",
+        "actionOptions": {}
+    },
+    "lbl_businesssegment": {
+        "locatorOptions": {},
+        "locator": null,
+        "LocatorByRole": null,
+        "locatorByText": "Business Segment *",
+        "locatorByLabel": null,
+        "description": "client verification page business party id",
+        "actionoptions": {}
+    },
+    "radio_btn_yes": {
+        "locatorOptions": {},
+        "locator": "xpath=//*[@id='']",
+        "LocatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": null,
+        "description": "client verification page business party id",
+        "actionoptions": {
+            "timeout": 5000
+        }
+    },
+    "dropdown_ordervalue": {
+        "locatorOptions": {},
+        "selectorOptions": {
+            "label": "order id"
+        },
+        "locator": "#industrydropdown",
+        "LocatorByRole": null,
+        "locatorByText": null,
+        "locatorByLabel": null,
+        "description": "client verification page business party id",
+        "actionoptions": {
+            "timeout": 5000
+        }
+    }
+}

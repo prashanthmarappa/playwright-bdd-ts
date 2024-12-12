@@ -1,0 +1,18 @@
+.feature-name {
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 500px;
+}
+
+.execution-time {
+    float: left;
+    margin-left: 10px;
+
+}
+
+.panel-heading a {
+    padding: 35px 15px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
