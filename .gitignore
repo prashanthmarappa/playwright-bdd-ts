@@ -1,3 +1,16 @@
 package-lock.json
 /node_modules/
 /test-results/
+reports/*.html
+reports/*.json
+traces/
+reports/
+dist/
+build
+docs/
+request.har
+*.logs
+@rerun.txt
+reports/cucumber_report.json
+reports/junit.xml
+reports/execution.log

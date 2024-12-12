@@ -80,6 +80,7 @@ Before(async ({ pickle, gherkinDocument }: ITestCaseHookParameter) => {
 
 After(async function ({ result, pickle, gherkinDocument }: ITestCaseHookParameter) {
   try {
+    
     const { line } = formatterHelpers.PickleParser.getPickleLocation({ gherkinDocument, pickle });
     scenarioName = pickle.name;
     const videoPath = await this.page?.video()?.path();
@@ -99,7 +100,7 @@ After(async function ({ result, pickle, gherkinDocument }: ITestCaseHookParamete
     });
     await this.page?.close();
     await this.context?.close();
-    Log.testEnd(`${pickle.name}: $(line)`, `$(result?.status}`);
+    Log.testEnd(`${pickle.name}: ${line}`, `${result?.status}`);
   }
   catch (error) {
     if (!browser.close()) {

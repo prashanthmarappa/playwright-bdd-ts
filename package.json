@@ -6,11 +6,14 @@
   "scripts": {
     "test": "cucumber-js test & npx ts-node ./src/reportGenerator/cucumberReport.ts",
     "test:feature": "cucumber-js -- tests/features/securedcards.feature",
-    "test:tags": "cucumber-js --tags @sample & npx ts-node ./src/reportGenerator/cucumberReport.ts",
+    "test:tags": "cucumber-js --tags @sample",
+    "test:report":"npx ts-node ./src/reportGenerator/cucumberReport.ts",
     "test:trace": "npx playwright show-trace",
     "codegen": "npx playwright codegen",
     "clean:reports": "rmdir /s /q reports",
-    "clean:nodes": "rmdir /s /q node_modules"
+    "clean:nodes": "rmdir /s /q node_modules",
+    "clean:mreports": "rm -rf reports",
+    "clean:mnodes": "rm -rf node_modules"
   },
   "keywords": [
     "PM",

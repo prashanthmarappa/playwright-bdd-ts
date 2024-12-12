@@ -73,28 +73,22 @@ export default class uiBasePage {
                     await this.getByLocator(object).click(object["actionOptions"]);
                 }
                 break;
-            case 'getByLocator':
-                isVisible = await this.getByLocator(object).isVisible();
+            case 'getByLabel':
+                isVisible = await this.getLocatorByLabel(object).isVisible();
                 if (isVisible) {
-                    await this.getByLocator(object).click(object["actionOptions"]);
+                    await this.getLocatorByLabel(object).click(object["actionOptions"]);
                 }
                 break;
-            case 'getByLocator':
-                isVisible = await this.getByLocator(object).isVisible();
+            case 'getByRole':
+                isVisible = await this.getLocatorByRole(object).isVisible();
                 if (isVisible) {
-                    await this.getByLocator(object).click(object["actionOptions"]);
+                    await this.getLocatorByRole(object).click(object["actionOptions"]);
                 }
                 break;
-            case 'getByLocator':
-                isVisible = await this.getByLocator(object).isVisible();
+            case 'getByText':
+                isVisible = await this.getLocatorByText(object).isVisible();
                 if (isVisible) {
-                    await this.getByLocator(object).click(object["actionOptions"]);
-                }
-                break;
-            case 'getByLocator':
-                isVisible = await this.getByLocator(object).isVisible();
-                if (isVisible) {
-                    await this.getByLocator(object).click(object["actionOptions"]);
+                    await this.getLocatorByText(object).click(object["actionOptions"]);
                 }
                 break;
             default:
@@ -112,20 +106,16 @@ export default class uiBasePage {
                 await this.getByLocator(object).click(object["actionOptions"]);
                 break;
 
-            case 'getByLocator':
-                await this.getByLocator(object).click(object["actionOptions"]);
+            case 'getByLabel':
+                await this.getLocatorByLabel(object).click(object["actionOptions"]);
                 break;
 
-            case 'getByLocator':
-                await this.getByLocator(object).click(object["actionOptions"]);
+            case 'getByRole':
+                await this.getLocatorByRole(object).click(object["actionOptions"]);
                 break;
 
-            case 'getByLocator':
-                await this.getByLocator(object).click(object["actionOptions"]);
-                break;
-
-            case 'getByLocator':
-                await this.getByLocator(object).click(object["actionOptions"]);
+            case 'getByText':
+                await this.getLocatorByText(object).click(object["actionOptions"]);
                 break;
             default:
                 throw new Error(`unsupported locator type:${locatorType}`);

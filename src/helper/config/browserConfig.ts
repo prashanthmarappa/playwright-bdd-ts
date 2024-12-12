@@ -63,7 +63,7 @@ export const browserContextOptions:BrowserContextOptions={
 
 export function loadEnv(){
     const env=process.env.npm_config_env||"dev";
-    require("dotenv").config({path:`./env.${env}`});
+    require("dotenv").config({path:`./.env.${env}`});
 }
 
 export function getBrowserCookieValue(array:Cookie[],cookieName:string){

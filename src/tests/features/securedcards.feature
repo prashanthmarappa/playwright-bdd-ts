@@ -9,6 +9,3 @@ Feature: Purchase laptop
         # Then select mac book to purchase
         # Then select mac book configuration
         # When click on buy verify the amount
-
-
-        
