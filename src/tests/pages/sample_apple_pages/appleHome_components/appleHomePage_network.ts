@@ -16,9 +16,9 @@ export default class appleHomePage_network extends networkBasePage {
         return await this.getPageNetworkResponseBodyAfterPageReload(url);
     }
 
-    async getIDJsonValue(json: any): Promise<any> {
+    async getNameJsonValue(json: any): Promise<any> {
         const jsonVal = await this.getJsonAttributeValue(json);
-        return jsonVal.id;
+        return jsonVal[2].name;
     }
 
     async getResponseAfterButtonClicked(url: string, object: any) {
