@@ -33,6 +33,16 @@ export default class uiAssertBasePage {
         }
     }
 
+    async expectedLabelToBeVisible(object: any, visible: boolean = true) {
+        if (visible) {
+            await expect(this.getLocatorByLabel(object)).toBeVisible();
+            this.loggerAttachment(`Expecting exact Label: '${object["locatorByLabel"]}' for ${this.getLocatorDescription(object)} to be visible`)
+        } else {
+            await expect(this.getLocatorByLabel(object)).not.toBeVisible();
+            this.loggerAttachment(`Expecting exact Label: '${object["locatorByLabel"]}' for ${this.getLocatorDescription(object)} not to be visible`)
+
+        }
+    }
     //===============================================================================================
 
     getByLocator(object: any) {

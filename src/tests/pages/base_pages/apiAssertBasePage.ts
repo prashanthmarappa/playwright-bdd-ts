@@ -29,7 +29,7 @@ export default class apiAssertBasePage {
         }
     }
 
-    async assertJsonAttributeNatchObject(json: any, jsonPath: string, jsonExpectedObject: any, visible: boolean = true) {
+    async assertJsonAttributeMatchObject(json: any, jsonPath: string, jsonExpectedObject: any, visible: boolean = true) {
         const keys = jsonPath.replace(/\[(\d+|any)]/g, `.$1`).split('.');
         let current = json;
         let traversedPath = '';
@@ -54,7 +54,9 @@ export default class apiAssertBasePage {
         }
     }
 
+    
     async assertJsonAttributeValue(json: any, jsonAttributeKey: string, jsonExpectedAttributeValue: any, visible: boolean = true) {
+        console.log(json.length);
         const actualValue = this.getValueByPath(json, jsonAttributeKey);
         let matched = false;
         let foundValue: any;
@@ -69,13 +71,14 @@ export default class apiAssertBasePage {
             if (!visible) {
                 await expect(foundValue).toBe(jsonExpectedAttributeValue)
             }
-            throw new Error(`Expected Value===> ${jsonExpectedAttributeValue}, not found in path ${jsonAttributeKey}`);
+            throw new Error(`Expected Value===> ${jsonExpectedAttributeValue}|| Actual Value==> ${actualValue.values}, not found in path "${jsonAttributeKey}" `);
 
         }
 
     }
 
     async assertJsonAttributeValueNotExist(json: any, jsonAttributeKey: string, jsonExpectedAttributeValue: any) {
+        console.log(json.length);
         const actualValue = this.getValueByPath(json, jsonAttributeKey);
         let matched = false;
         let foundValue: any;
@@ -141,22 +144,22 @@ export default class apiAssertBasePage {
         return printJson;
     }
 
-    getValueByPath<T>(json: T, path: string): { values: any[]; indices: number[] } {
-        const keys = path.replace(/\[(\d+|any)]/g, `.$1`).split('.');
-        let acc: any = json;
+    getValueByPath<T>(json: T, path: string): { values: any[]; indices: number[]} {
+        const keys = path.replace(/\[(\d+|any)\]/g, '.$1').split('.');
+        let currentnode: any = json;
         const results: any[] = [];
-        const indices: number[] = [];
+        const indices: number[]= [];
         for (let i = 0; i < keys.length; i++) {
             const key = keys[i];
             if (key === "any") {
                 keys.length - 1;
-                if (!Array.isArray(acc)) {
-                    throw new Error("'any' used in path, but current node is not array");
+                if (!Array.isArray(currentnode)) {
+                    throw new Error(`'any' used in path, but current node is not array at path segment: ${keys.slice(0,i+1).join(".")}`);
                 }
-                for (let index = 0; index < acc.length; index++) {
-                    const item = acc[index];
+                for (let index = 0; index < currentnode.length; index++) {
+                    const item = currentnode[index];
                     try {
-                        const result = this.getValueByPath(item, keys.slice(i + 1).join('.'));
+                        const result = this.getValueByPath(currentnode[index], keys.slice(i + 1).join('.'));
                         results.push(...result.values);
                         console.log(result.values);
                         indices.push(index);
@@ -169,21 +172,22 @@ export default class apiAssertBasePage {
                     throw new Error(`no matching node found at json path "${path}" in an array element`);
 
                 }
+                return {values:results,indices};
             }
             else if (!isNaN(Number(key))) {
-                acc = acc[Number(key)];
-                if (acc === undefined) {
+                currentnode = currentnode[Number(key)];
+                if (currentnode === undefined) {
                     throw new Error(`Array index "${key}" not found in json path "${path}"`);
 
                 }
             } else {
                 if (i == keys.length - 1) {
-                    if (acc && acc[key] !== undefined) {
-                        results.push(acc[key]);
+                    if (currentnode && currentnode[key] !== undefined) {
+                        results.push(currentnode[key]);
                     }
                 } else {
-                    acc = acc[key];
-                    if (acc === undefined) {
+                    currentnode= currentnode[key];
+                    if (currentnode=== undefined) {
                         throw new Error(`property "${key}" not found in json path "${path}"`);
 
                     }

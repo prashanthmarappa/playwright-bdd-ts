@@ -14,3 +14,4 @@ request.har
 reports/cucumber_report.json
 reports/junit.xml
 reports/execution.log
+.DS_Store
