@@ -27,10 +27,10 @@ Then('verify store button and click on shop', async function () {
     await appleHomePage_ui_assert.uiAssertStoreMenu();
     await appleHomePage_ui_actions.click_menu_store();
     flyout_json_response = await appleHomePage_network.getFlyOutStoreItems(`**/global-elements/global-header/v1/flyouts?locale=en_US`);
-    const sample= await appleHomePage_network.getNameJsonValue(flyout_json_response);
+    const sample = await appleHomePage_network.getNameJsonValue(flyout_json_response);
     console.log(sample);
-    await appleHomePage_api_assert.assertJsonAttributeKey(flyout_json_response[0],'name');
-   await appleHomePage_api_assert.assertJsonAttributeMatchObject(flyout_json_response[3],'','');
-    await expect(flyout_json_response).toHaveProperty("[0].analyticsAttributes[0].value","apple home");
-   //await appleHomePage_api_assert.assertJsonAttributeValue(flyout_json_response, "[1].analyticsAttributes[0].value","apple home");
+    await appleHomePage_api_assert.assertJsonAttributeKey(flyout_json_response[0], 'name');
+    await appleHomePage_api_assert.assertJsonAttributeMatchObject(flyout_json_response[0], 'analyticsAttributes[0]', { name: "data-analytics-title", value: "apple home" });
+    await expect(flyout_json_response).toHaveProperty("[0].analyticsAttributes[0].value", "apple home");
+    //await appleHomePage_api_assert.assertJsonAttributeValue(flyout_json_response, "[1].analyticsAttributes[0].value","apple home");
 });
