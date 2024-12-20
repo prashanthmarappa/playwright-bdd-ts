@@ -13,4 +13,4 @@ To Execute Tests
 
  npm test --env=dev
 
-[PlayWright Features](Introduction to Playwright-min.pdf)
+[PlayWright Features](./Introduction to Playwright-min.pdf)
