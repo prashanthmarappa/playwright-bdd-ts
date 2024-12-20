@@ -4,10 +4,10 @@
   "description": "Playwright Automation Framework with BDD",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js test & npx ts-node ./src/reportGenerator/cucumberReport.ts",
+    "test": "cucumber-js test",
     "test:feature": "cucumber-js -- tests/features/securedcards.feature",
     "test:tags": "cucumber-js --tags @sample",
-    "test:report":"npx ts-node ./src/reportGenerator/cucumberReport.ts",
+    "test:reportgen":"npx ts-node ./src/reportGenerator/cucumberReport.ts",
     "test:trace": "npx playwright show-trace",
     "codegen": "npx playwright codegen",
     "clean:reports": "rmdir /s /q reports",

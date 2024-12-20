@@ -1,4 +1,8 @@
 # playwright-bdd-ts
+Software
+
+Nodejs v10
+
 To Setup Framework
 
  npm install
@@ -6,7 +10,7 @@ To Setup Framework
 To Execute Tests
  
  npm run test:tags
+
  npm test --env=dev
 
- npx playwright show-trace
 
