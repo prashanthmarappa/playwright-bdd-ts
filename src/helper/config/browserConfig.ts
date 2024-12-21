@@ -22,14 +22,15 @@ let page:Page;
 loadEnv();
 
 export const firefoxBrowserOptions:LaunchOptions={
-    headless: process.env.Headless==='true',
+    headless: process.env.HEADLESS==='true',
     args:["--start-maximized"],
 
 };
 
 export const chromeBrowserOptions:LaunchOptions={
     slowMo:1500,
-    headless: process.env.Headless==='true',
+    
+    headless: process.env.HEADLESS==='true',
     devtools:false,
     logger:{
         isEnabled:(name,severity)=>name==="api",
@@ -40,7 +41,7 @@ export const chromeBrowserOptions:LaunchOptions={
 };
 export const edgeBrowserOptions:LaunchOptions={
     channel:"msedge",
-    headless: process.env.Headless==='true',
+    headless: process.env.HEADLESS==='true',
     args:["--start-maximized"],
 
 };
@@ -58,12 +59,12 @@ export const browserContextOptions:BrowserContextOptions={
     javaScriptEnabled: true,
     ignoreHTTPSErrors:true,
     acceptDownloads:true,
-    recordVideo:false ? {dir:"./test-results/videos"}:undefined,
+    recordVideo: process.env.RECORD_VIDEO==='true' ? {dir:"./test-results/videos"}:undefined,
 };
 
 export function loadEnv(){
-    const env=process.env.npm_config_env||"dev";
-    require("dotenv").config({path:`./.env.${env}`});
+const env=process.env.npm_config_env||"dev";
+   require("dotenv").config({path:`./.env.${env}`});
 }
 
 export function getBrowserCookieValue(array:Cookie[],cookieName:string){
