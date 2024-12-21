@@ -39,6 +39,12 @@ export default class uiBasePage {
         await this.page.waitForSelector(object["locator"]);
         this.loggerAttachment(`waiting page for selector ${object["locator"]},for ${object["description"]}`);
     }
+    async pageScreenshot(screenshotName:any){
+       const img= await this.page.screenshot({
+            path: `./src/tests/test_resources/compare_screenshots/${screenshotName}.png`,
+            fullPage: true});
+            this.loggerAttachment(img,"image/png");
+    }
 
     async enter(locatorType: 'getByLocator' | 'getByLabel' | 'getByRole' | 'getByText', object: any, data: string) {
         switch (locatorType) {

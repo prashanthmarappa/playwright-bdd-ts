@@ -47,6 +47,7 @@ export const edgeBrowserOptions:LaunchOptions={
 };
 
 export const browserContextOptions:BrowserContextOptions={
+ 
     viewport:{
         width:Number.parseInt(process.env.VIEWPORT_WIDTH as string),
         height:Number.parseInt(process.env.VIEWPORT_HEIGHT as string),

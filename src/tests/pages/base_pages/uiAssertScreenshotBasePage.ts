@@ -68,8 +68,13 @@ export default class uiAssertBuiAssertScreenshotBasePage {
         await expect(element).toHaveScreenshot(elementOptions);
     }
 
+    async compareScreenshot(screenshotName: string){
+       await expect((this.page.screenshot({fullPage:true}))).toMatchSnapshot(`./src/tests/test_resources/compare_screenshots/${screenshotName}.png`);
+    }
+
     getByLocator(object: any) {
         return this.page.locator(object["locator"], object["locatorOptions"]);
     }
+
 
 }

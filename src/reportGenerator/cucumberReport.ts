@@ -31,7 +31,7 @@ function generateHtml() {
     options.metadata.Execution_Date = DateUtil.dateGenerator("DD/MM/YYYY", 0, 0, 0);
     options.metadata.Browser = process.env.BROWSER as string;
     options.metadata.APP_URL = process.env.BASE_URL as string;
-    options.metadata.Test_Environment = process.env.APP_ENV as string;;
+    options.metadata.Test_Environment = process.env.APP_ENV as string;
     reporter.generate(options);
 }
 generateHtml();
