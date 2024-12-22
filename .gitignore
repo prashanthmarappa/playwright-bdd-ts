@@ -15,3 +15,4 @@ reports/cucumber_report.json
 reports/junit.xml
 reports/execution.log
 .DS_Store
+src/tests/test_resources/compare_screenshots/homepage.png

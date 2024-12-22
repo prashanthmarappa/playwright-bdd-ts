@@ -22,7 +22,7 @@ let page:Page;
 loadEnv();
 
 export const firefoxBrowserOptions:LaunchOptions={
-    headless: process.env.HEADLESS==='true',
+    headless: false,
     args:["--start-maximized"],
 
 };
@@ -41,7 +41,7 @@ export const chromeBrowserOptions:LaunchOptions={
 };
 export const edgeBrowserOptions:LaunchOptions={
     channel:"msedge",
-    headless: process.env.HEADLESS==='true',
+    headless: false,
     args:["--start-maximized"],
 
 };

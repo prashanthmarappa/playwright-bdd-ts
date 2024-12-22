@@ -57,7 +57,7 @@ BeforeAll(async () => {
       browser = await firefox.launch(firefoxBrowserOptions);
       break;
     default:
-      throw new Error(`invalid browser type ${[process.env.BROWSE]}`);
+      throw new Error(`invalid browser type ${[process.env.BROWSER]}`);
   }
 });
 
