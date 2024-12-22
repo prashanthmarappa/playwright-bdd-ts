@@ -41,6 +41,6 @@ Then('verify store button and click on shop', async function () {
     console.log(sample);
     await appleHomePage_api_assert.assertJsonAttributeKey(flyout_json_response[0], 'name');
     await appleHomePage_api_assert.assertJsonAttributeMatchObject(flyout_json_response[0], 'analyticsAttributes[0]', { name: "data-analytics-title", value: "apple home" });
-    await expect(flyout_json_response).toHaveProperty("[0].analyticsAttributes[0].value", "apple home");
-    //await appleHomePage_api_assert.assertJsonAttributeValue(flyout_json_response, "[1].analyticsAttributes[0].value","apple home");
+    //await expect(flyout_json_response).toHaveProperty("[0].analyticsAttributes[0].value", "apple home");
+    await appleHomePage_api_assert.assertJsonAttributeValue(flyout_json_response[0], 'analyticsAttributes[0].value',"apple home");
 });

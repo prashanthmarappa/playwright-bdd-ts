@@ -56,7 +56,7 @@ export default class apiAssertBasePage {
 
     
     async assertJsonAttributeValue(json: any, jsonAttributeKey: string, jsonExpectedAttributeValue: any, visible: boolean = true) {
-        console.log(json.length);
+       // console.log(json.length);
         const actualValue = this.getValueByPath(json, jsonAttributeKey);
         let matched = false;
         let foundValue: any;
@@ -64,12 +64,12 @@ export default class apiAssertBasePage {
             foundValue = value;
             if (value === jsonExpectedAttributeValue) {
                 matched = true;
-                await expect(value.toBe(jsonExpectedAttributeValue))
+                await expect(value).toBe(jsonExpectedAttributeValue);
             }
         }
         if (!matched) {
             if (!visible) {
-                await expect(foundValue).toBe(jsonExpectedAttributeValue)
+                await expect(foundValue).toBe(jsonExpectedAttributeValue);
             }
             throw new Error(`Expected Value===> ${jsonExpectedAttributeValue}|| Actual Value==> ${actualValue.values}, not found in path "${jsonAttributeKey}" `);
 
